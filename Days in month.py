@@ -11,10 +11,12 @@ def is_leap(year):
         return False
 
 def days_in_month(year, month):
-  month_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]  
-  if is_leap(year) == True and month == 2:
+    if month > 12 or month < 1:
+        return False
+    month_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]  
+    if is_leap(year) == True and month == 2:
       return 29
-  return month_days[month - 1] #list start from zero so january will be in month_days[0]
+    return month_days[month - 1] #list start from zero so january will be in month_days[0]
 
 
 year = int(input("Enter a year: ")) #Year
